@@ -8,13 +8,13 @@ const player = new Player(iframeEl);
 
 
 
-player.on('timeupdate', throttle(updateTime, 1000));
+player.on("timeupdate", throttle(function (data) {
+    const time = data.seconds;
+    console.log(time);
+   localStorage.setItem(STORAGE_KEY, time)
+},1000))
 
-function updateTime ({ second }) {
-localStorage.setItem(STORAGE_KEY, second);
-}
+const startTime = +localStorage.getItem(STORAGE_KEY);
 
-const time = +localStorage.getItem(STORAGE_KEY);
-
-player.setCurrentTime(time);
+player.setCurrentTime(startTime);
 
