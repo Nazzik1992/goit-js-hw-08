@@ -38,7 +38,8 @@ function getLocalStorageText() {
   
     try {
       saveObject = JSON.parse(localStorage.getItem(STORAGE_KEY));
-    } catch {
+    } 
+    catch {
       saveObject = localData;
     }
   
