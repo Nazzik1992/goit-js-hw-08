@@ -22,14 +22,15 @@ function onInputListener()
   localData.email =  inputEmail.value ;
   localData.message=  textarea.value ;
 localStorage.setItem(STORAGE_KEY, JSON.stringify(localData));
-console.log(JSON.stringify(localData))};
+};
 
 
 formFeedback.addEventListener('submit', onFormSubmit);
 function onFormSubmit (event){
 event.preventDefault();
 event.target.reset();
-localStorage.removeItem(STORAGE_KEY)
+localStorage.removeItem(STORAGE_KEY);
+console.log(localData);
 }
 
 
